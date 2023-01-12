@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+<!-- {% load bootstrap5 %} -->
+
+{% block content %}
+<br>
+<a class="link" href="{% url 'customers:new_customer' %}">add new customer</a>
+<br>
+{% if user.is_authenticated %}
+<div class="alert alert-success" role="alert">
+    <h1>Welcome {{ user.username }}!</h1>
+    <h2>Customers</h2>
+
+    {% if latest_customer_list %}
+    <ul>
+        {% for customer in latest_customer_list %}
+        <li>{{ customer.business_name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <br>
+    <p>No customers are available.</p>
+    {% endif %}
+</div>
+{% else %}
+<div class="alert alert-success" role="alert">
+    <h1>Customers</h1>
+</div>
+{% endif %}
+<br>
+<div class="center">
+
+</div>
+{% endblock content %}

@@ -3,9 +3,13 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from .forms import SignupForm
 
+
 def home(request):
     return render(request, 'users/home.html')
 
+def portfolio(request):
+    return render(request, 'home.html')
+    
 def signup(request):
     if request.method == 'POST':
         form = SignupForm(request.POST)

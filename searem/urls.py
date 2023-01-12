@@ -3,6 +3,7 @@ from django.urls import include, path
 from django.contrib.auth import views as auth_views
 
 from users import views as user_views
+from customers import views as customer_views
 
 urlpatterns = [
     path('polls/', include('polls.urls')),

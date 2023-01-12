@@ -3,11 +3,11 @@
 {% block content %}
   <br>
   <div class="alert alert-success" role="alert">
-    <h2 style="text-align: center;">Login</h2>
+    <h2 style="text-align: center;">Sign up</h2>
   </div>
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <button type="submit">Sign up</button>
   </form>
 {% endblock content%}
